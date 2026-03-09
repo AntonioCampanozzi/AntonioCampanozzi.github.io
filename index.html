@@ -45,6 +45,7 @@
         header {
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 1.25rem 10%;
             gap: 5rem;
             position: fixed;
@@ -56,6 +57,7 @@
         }
 
         header a {
+            display: flex;
             color: white;
             text-decoration: none;
             font-size: 1rem;
@@ -109,6 +111,7 @@
         .dropdown:hover .dropdown-content {
             opacity:1;
             visibility: visible;
+            position:absolute;
             transform: translateX(-10%) translateY(0);
         }
 
@@ -123,18 +126,24 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 100px;
+            max-width: 1200px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        .hero-text p{
+            margin-bottom: 0px;
         }
 
         .hero-text h1 {
             font-size: 3.5rem;
-            margin: 0;
+            margin:0;
         }
 
         .hero-text h2 {
             font-size: 5.7rem;
             color: var(--orange);
-            margin: 0;
+            margin:0;
             line-height: 1.1;
         }
 
@@ -152,11 +161,18 @@
         }
 
         .profile-img {
-            width: 300px;
-            height: 300px;
-            background: url('propic_2.webp') center/cover; /* Sostituisci con la tua foto */
-            border-radius: 30%;
+            width: 400px;
+            height: 400px;
+            margin:0;
+
+        }
+
+        .profile-img img{
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            border-radius: 30%;
+            filter: drop-shadow(0 0 20px var(--orange));
         }
 
         /* I Tag in Vetroformismo */
@@ -187,6 +203,7 @@
             background: rgba(255, 255, 255, 0.05); 
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom:5px;
     
     /* Forma e distanze */
             padding: 6px 14px;
@@ -280,7 +297,7 @@
             display: flex;
             align-items: center;
             justify-content:space-between; 
-            gap: 8.125rem;
+            gap: 10%;
         }
 
         .project.reverse {
@@ -298,9 +315,6 @@
             margin: 20px 0;
             line-height: 1.5;
             font-weight: 600;
-            flex:1;
-            flex-direction: column;
-            justify-content: center;
             margin:0;
             margin-top: 30px;
             margin-bottom: 30px;
@@ -386,19 +400,36 @@
                 margin-bottom: 60px;
             }
 
+            .hero-text p {
+                margin-top: 40px;
+                margin-bottom: 0px;
+            }
+
+            .hero-text h1 {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+            }
+
             .hero-text h2 {
                 font-size: clamp(2.5rem, 10vw, 4.5rem);
             }
 
-            .header {
-                flex-direction: column;
-                font-size: 8px;
-                gap: 1rem;
+            .profile-img{
+                width: 250px;
+                height: 250px;
+            }
+
+            header {
+                
+                gap: 70rem;
                 padding: 1rem;
             }
 
+            header a {
+                font-size: 0.7rem;
+            }
+
             .tag-large{
-                font-size: 0.9rem;
+                font-size: clamp(0.7rem, 1vw, 1.1rem);
                 padding: 8px 2px;
             }
 
@@ -441,6 +472,11 @@
             .custom-list li {
                 
                 font-size: 1rem;
+            }
+
+            .custom-list li::before {
+                width: 8px;
+                height: 8px;
             }
 
             .custom-list li::after {
@@ -494,13 +530,13 @@
         <a href="#">Home</a>
         <a href="#about">About</a>
         <div class="dropdown">
-            <a href="#projects">Projects</a>
+            <a href="#projects">Work</a>
             <div class="dropdown-content">
                 <a href="#tiresias">Tiresias <span>Time Series</span></a>
                 <a href="#mlops"> AI Component <span>MLOps</span></a>
                 <a href="#clustering">Muten <span>Process Mining</span></a>
             </div>
-        </div>
+        </div>    
         <a href="#contacts">Profiles & Contacts</a>
     </header>
 
@@ -512,8 +548,8 @@
                 <h2>AI Engineer &<br>Data Scientist</h2>
                 <p><a href="https://github.com/AntonioCampanozzi" class="view" target="_blank" rel="noopener noreferrer">Check out my resume! ↗</a></p>
             </div>
-            <div class="profile-placeholder">
-                <div class="profile-img"></div>
+            <div class="profile-img">
+                <img src="propic_2.webp" alt="Profile Picture">
             </div>
         </section>
 
