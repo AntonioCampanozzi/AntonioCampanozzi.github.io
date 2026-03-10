@@ -17,6 +17,11 @@
         h3 {
             scroll-margin-top: 3.75rem;
         }
+
+        h2 {
+            scroll-margin-top: 3.75rem;
+        }
+
         :root {
             --orange: #FF6B00;
             --bg-dark: #000000;
@@ -64,6 +69,11 @@
             font-weight: 700;
         }
 
+        .highlight {
+            color: var(--orange);
+            font-weight: 800;
+        }
+
         /* Il contenitore della lista */
         .dropdown-content {
             opacity:0;
@@ -76,7 +86,7 @@
             min-width: 17.5rem;
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px);
-            left: 50%;
+            /*left: 50%;*/
             margin-top: 0px;
             z-index: 10;
         }
@@ -217,21 +227,42 @@
 
         /* Sezione About Me ed Elenco Puntato */
         .about-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 100px;
+            display: flex;
+            
+            /*grid-template-columns: auto auto;*/
+            align-items: center;
+            gap:10%;
+            justify-items: space-between;
+            margin-top: 30px;
+        }
+
+        .schema-grid{
+            width:45%;
+            flex-shrink: 0;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .schema-grid img {
+            display: flex;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .interest-title {
             font-size: 1.5rem;
-            margin-top: 10rem;
             margin-bottom: 20px;
         }
 
         .custom-list {
             list-style: none;
             padding: 0;
+
         }
 
         .custom-list li {
@@ -247,7 +278,7 @@
             content: "";
             position: absolute;
             left: 0;
-            top: 30%;
+            top: 10px;
             width: 12px;
             height: 12px;
             background: var(--orange);
@@ -259,9 +290,9 @@
             content: "";
             position: absolute;
             left: 5px;
-            top: 30px;
+            top: 27px;
+            bottom:-40px;
             width: 2px;
-            height: 40px;
             background: var(--orange);
             z-index: 1;
         }
@@ -271,8 +302,7 @@
         .about-text {
             font-size: 0.95rem;
             color: #ddd;
-            text-align: justify;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         /* Progetti */
@@ -281,7 +311,7 @@
             font-size: 2.5rem;
             text-align: center;
             
-            margin: 30px auto 20px;
+            margin: 180px auto 20px;
             width: auto;
             border-bottom: 2px solid var(--orange);
             padding: 0 30px 0 30px;
@@ -442,13 +472,27 @@
             }
 
             .about-section {
+                display: grid;
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .schema-grid {
+                width: 100%;
+                align-items: center;
+                justify-items: center;
+                /*lo schema grid va sempre sotto il testo, indipendentemente che prima si trovasse a sinistra o destra*/
+                order: 1;
+            }
+
+            .schema-grid img {
+                display:none;
             }
 
             .projects-title{
                 font-size: clamp(1.8rem, 5vw, 2.5rem);
                 gap: 0 20px;
+                margin-top: 40px;
             }
 
             .projects-section{
@@ -488,7 +532,6 @@
             }
 
             .dropdown-content{
-                left: 45%;
                 min-width: 12rem;
             }
 
@@ -532,7 +575,15 @@
 
     <header>
         <a href="#">Home</a>
-        <a href="#about">About</a>
+        <div class="dropdown">
+            <a href="#about">About</a>
+            <div class="dropdown-content">
+                <a href="#journey">My Journey</a>
+                <a href="#skills">Technical Vision</a>
+                <a href="#goals">Professional Goals</a>
+            </div>
+        </div>
+        </div>
         <div class="dropdown">
             <a href="#projects">Projects</a>
             <div class="dropdown-content">
@@ -566,23 +617,69 @@
             <span class="tag tag-large">Computer Vision</span>
             <span class="tag tag-large">Process Mining</span>
         </div>
-
-        <section id="about" class="about-section">
+        <h2 id="about" class="projects-title">About me</h2>
+        <section class="about-section">    
             <div>
+                <p class="about-text">
+                    <h2 id="journey">My Journey</h2>
+                    My path in computer science began as a personal wager on a field I had never directly explored, but which
+                    fascinated me from the very start for its ability to model the complexity of reality. This passion led me to
+                    a Bachelor’s degree in Computer Science at the University of Bari, where I completed an experimental thesis in
+                    <span class="highlight">Predictive Process Monitoring</span>. The core of my work involved designing and implementing an encoding system to transform
+                    process instances into semantic stories, which were then fed into a <span class="highlight">BERT-based</span> encoder to predict process outcomes. 
+                    Following this first technical encounter with Artificial Intelligence, I chose to further my specialization by enrolling
+                    in the International Master’s Degree in Computer Science, Artificial Intelligence Curriculum at the University of Bari,
+                    a step that has defined my professional mission: to <span class="highlight">actively</span> contribute to the evolution of this discipline.
+                </p>
+            </div>
+            <div class="schema-grid">
+                <img src="graduate.webp" alt="graduation">
+            </div>
+        </section>
+        <section class="about-section">
+            <div class="schema-grid">
                 <h3 class="interest-title">Main interests</h3>
                 <ul class="custom-list">
                     <li>Knowledge Graph Embeddings</li>
                     <li>Time Series</li>
                     <li>Process Discovery</li>
-                    <li>Agents</li>
+                    <li>Agentic-AI</li>
                 </ul>
             </div>
             <div>
-                <h2 class="projects-title">About me</h2>
                 <p class="about-text">
-                    My journey with computer science begins by chance... (incolla qui il tuo testo corretto).
+                    <h2 id="skills">Technical Vision</h2>
+                    Throughout my studies, I have developed a structured approach to designing AI-driven systems. I have matured the ability
+                    to identify real-world needs, formulate problems accurately, and design the most appropriate architectures. In practice,
+                    this translates into building <span class="highlight">end-to-end data processing and analysis pipelines</span>, followed by rigorous experimentation on
+                    established benchmarks and a deep interpretation of the results. My goal is to develop reproducible systems that are compact
+                    and highly modular—ensuring easy maintenance and scalability—as well as resource-efficient and portable. In every phase of
+                    design and development, I apply a <span class="highlight">scientific rigor</span> fueled by a highly critical eye and a strong attention to detail.
                 </p>
             </div>
+        </section>
+        <section class="about-section">
+            <div>
+                <p class="about-text">
+                    <h2 id="goals">Professional Goals</h2>
+                    Currently, my research and projects focus on Knowledge Graphs and <span class="highlight">Knowledge Graph Embedding</span> models, areas in which I intend
+                    to further deepen my specialization. At the same time, I maintain a strong curiosity toward <span class="highlight">other branches of AI</span>, viewing 
+                    them as fertile ground for experimenting with novel combinations of methods to solve real-world problems elegantly and
+                    efficiently. I am aiming for the role of <span class="highlight">Research Engineer</span>: a figure capable of navigating the intersection between
+                    implementing cutting-edge AI technologies and building real-world products. I am looking for a dynamic and stimulating
+                    environment where I can contribute to the design of systems that integrate state-of-the-art AI in innovation-driven contexts.
+                </p>
+            </div>
+            <div class="schema-grid">
+                <div class="schema-grid">
+                <h3 class="interest-title">What I am looking for</h3>
+                <ul class="custom-list">
+                    <li>Dynamic Environment</li>
+                    <li>Competitive Pay</li>
+                    <li>Cutting-edge AI Applications development</li>
+                </ul>
+            </div>
+                
         </section>
 
         <section id="projects" class="projects-section">  
