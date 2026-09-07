@@ -587,9 +587,12 @@
         <div class="dropdown">
             <a href="#projects">Projects</a>
             <div class="dropdown-content">
+                <a href="#cerberus">CERBERUS <span>Knowledge Graphs</span></a>
                 <a href="#tiresias">Tiresias <span>Time Series</span></a>
                 <a href="#mlops"> AI Component <span>MLOps</span></a>
                 <a href="#clustering">Muten <span>Process Mining</span></a>
+                <a href="#probing">VLM Probing <span>Multimodal AI</span></a>
+                <a href="#gemd">GEM-D <span>Knowledge Graphs</span></a>
             </div>
         </div>    
         <a href="#contacts">Profiles & Contacts</a>
@@ -601,7 +604,7 @@
                 <p>Hello, Nice to meet you!</p>
                 <h1>I'm Antonio</h1>
                 <h2>AI Engineer &<br>Data Scientist</h2>
-                <p><a href="https://github.com/AntonioCampanozzi" class="view" target="_blank" rel="noopener noreferrer">Check out my resume! ↗</a></p>
+                <p><a href="CV_Campanozzi_Antonio.pdf" download="CV_Campanozzi_Antonio.pdf" class="view" target="_blank" rel="noopener noreferrer">Check out my resume!</a></p>
             </div>
             <div class="profile-img">
                 <img src="propic_2.webp" alt="Profile Picture">
@@ -686,6 +689,27 @@
             <h2 class="projects-title">Projects</h2>
             <div class="project">
                 <div class="project-info">
+                    <h3 id="cerberus">CERBERUS</h3>
+                    <div class="tag tag-small">Neuro-Symbolic AI</div>
+                    <div class="tag tag-small">Negative Sampling</div>
+                    <div class="tag tag-small">KGE Models</div>
+                    <div class="tag tag-small">Ontology engineering</div>
+
+                    <p class="project-description">CERBERUS is a negative sampling system for training knowledge graph embedding models, 
+                        designed to tackle the challenge of generating plausible and informative negatives. The system integrates 
+                        ontological constraints, namely rdfs:domain and rdfs:range, owl:disjointWith, and rdfs:subclassOf, into the 
+                        negative generation process to ensure semantic coherence. CERBERUS also implements a false-negative mitigation 
+                        mechanism, reducing their impact on training through the loss function, and is fully compatible with PyKEEN, the 
+                        state-of-the-art framework for training knowledge graph embedding models.
+                    </p>
+                    <a href="https://www.google.com/search?sca_esv=a39be9d9e408cef3&sxsrf=APpeQnvH1rpEqXPevIb6KfX_ZmuJvLAkCQ:1788799439550&udm=2&fbs=ABfTbFWgwlc2MNw7uknLQP9cFo05YtUSpNgn2klEDQSYENClc9rC8PvVvFW40kjRYlUQHR0wGkZDrJfbdRgz3gXC-gIjRiMrwwBhwp-uJ1C_dw-rIvMbCYqK5NY1gwoX5eStjx6RaFp_ftus4YHKrQm2_xwF3eOH1xsJasfDe-WDWWtcodtrUN81U8RZx6syZiyerJMOyrrj&q=cerberus&sa=X&ved=2ahUKEwiCv6yZ9dyWAxUEhP0HHUgGJ_MQtKgLegQIIhAB&biw=1920&bih=993&dpr=1" class="view" target="_blank" rel="noopener noreferrer">Available Soon!</a>
+                </div>
+                <div class="project-img">
+                    <img src="CERBERUS.webp" alt="CERBERUS Project">
+                </div>
+            </div>
+            <div class="project reverse">
+                <div class="project-info">
                     <h3 id="tiresias">TIRESIAS</h3>
                     <div class="tag tag-small">Time Series</div>
                     <div class="tag tag-small">Deep Learning</div>
@@ -705,7 +729,7 @@
                     <img src="tiresia.webp" alt="Tiresias Project">
                 </div>
             </div>
-                <div class="project reverse">
+                <div class="project">
                     <div class="project-info">
                         <h3 id="mlops">Deployable AI Component</h3>
                         <div class="tag tag-small">DVC</div>
@@ -725,7 +749,7 @@
                         <img src="mlops.webp" alt="MLOps Project">
                     </div>
                 </div>
-                <div class="project">
+                <div class="project reverse">
                     <div class="project-info">
                         <h3 id="clustering">MUTEN: MUltiview Trace ENcodings</h3>
                         <div class="tag tag-small">Process Discovery</div>
@@ -745,6 +769,48 @@
                         <img src="Muten.webp" alt="MUTEN Project">
                     </div>
                 </div>
+                <div class="project">
+                    <div class="project-info">
+                        <h3 id="probing">VLM probing on QA</h3>
+                        <div class="tag tag-small">Multimodal AI</div>
+                        <div class="tag tag-small">Visual Language Models</div>
+                        <div class="tag tag-small">Probing</div>
+                        <div class="tag tag-small">Image Question Answering</div>
+                        
+                        <p class="project-description">Conducted a study on the phenomenon of hallucinations in Visual Language Models on the Visual Question
+                            Answering task. The developed framework extracts the models' activations and analyzes them through probers, reduced-complexity classifiers, 
+                            trained on a multiclass classification task to distinguish between three types of hallucination: existence, attribute, and relation. 
+                            The results show that the VLM's language module is the main repository of information, absorbing the limited discriminative capacity 
+                            of the vision module. Furthermore, the analysis reveals that attention mechanism activations in the intermediate layers constitute the
+                            most predictive signal for determining the category of hallucination produced by the model.
+                        </p>
+                        <a href="https://github.com/AntonioCampanozzi/VLM_probing" class="view" target="_blank" rel="noopener noreferrer">View project ↗</a>
+                    </div>
+                    <div class="project-img">
+                        <img src="VLM_probing.webp" alt="VLM Probing Project">
+                    </div>
+                </div>
+                <div class="project reverse">
+                    <div class="project-info">
+                        <h3 id="gemd">GEM-D</h3>
+                        <div class="tag tag-small">Neuro-Symbolic AI</div>
+                        <div class="tag tag-small">KGE Models</div>
+                        <div class="tag tag-small">Graph completion</div>
+                        <div class="tag tag-small">Early prediction</div>
+                        
+                        <p class="project-description">Introduced a novel approach to early Massive Open Online Courses (MOOCs) dropout prediction by leveraging graph embeddings
+                            to generate synthetic yet plausible user-course interactions via graph completion. Users and courses were encoded using knowledge graph embedding models
+                            (TransE, RotatE, TuckER), selected and tuned via extensive hyperparameter optimization with Optuna, with TuckER emerging as the best performer, 
+                            with an MRR of 0.643 and Hits@10 of 0.785. The resulting embeddings were used to generate realistic feature vectors for new user-course pairs through
+                            link prediction, which were then fed into an XGBoost classifier to predict dropout at an early stage achieving an AUC of 0.834 and an F1-score of 0.890. 
+                            This approach addresses a key limitation of traditional methods—the need for substantial observed interaction history by synthesizing plausible behavioral patterns even in low-data scenarios.
+                        </p>
+                        <a href="https://github.com/AntonioCampanozzi/GEM-D" class="view" target="_blank" rel="noopener noreferrer">View project ↗</a>
+                    </div>
+                    <div class="project-img">
+                        <img src="GEM_D.webp" alt="GEM-D Project">
+                    </div>
+                </div>
         </section>
 
         <section id="contacts" class="contacts-section">
@@ -754,7 +820,7 @@
                     <a href="www.linkedin.com/in/antonio-campanozzi-8aaa16304" target="_blank" rel="noopener noreferrer"><img src="linkedin.webp" alt="LinkedIn"></a>
                     <a href="https://github.com/AntonioCampanozzi" target="_blank" rel="noopener noreferrer"><img src="github.webp" alt="GitHub"></a>
                     <a href="mailto:antonio.campanozziic@gmail.com" target="_blank" rel="noopener noreferrer"><img src="email.webp" alt="Email"></a>
-                    <a href="https://profile.indeed.com/?hl=it_IT&co=IT&from=gnav-notifcenter" target="_blank" rel="noopener noreferrer"><img src="indeed.webp" alt="Indeed"></a>
+                    
                 </div>
         </section>
 
